@@ -9,7 +9,7 @@
           <p>Can you remember your life? I can't... 
             that's why I made Day Hop! An app that lets you write a tweet sized post about what you did on a particular day. 
             Give it a title, give it a body, (change the date if you forgot to post yesterday..) and you're all set.
-            BUT WAIT! THERE IS MORE! You can also see what post you made on any day a year ago... and the year before that... and the year before that.</p>
+            BUT WAIT! THERE IS MORE! You can also see what post you made on any day a year ago... and the year before that... and the year before that... etc</p>
         </div>
       </div>
     </div>
@@ -37,18 +37,4 @@
       </div>
     </div>
   </div>
-
-    {% comment %} <div class="card-panel">
-        <h2 class="card-title">About Day Hop</h2>
-        <p>Can you remember your life? I can't... 
-        that's why I made Day Hop! An app that lets you write a tweet sized post about what you did on a particular day. 
-        Give it a title, give it a body, (change the date if you forgot to post yesterday..) and you're all set.
-        BUT WAIT! THERE IS MORE! You can also see what post you made on any day a year ago... and the year before that... and the year before that.
-        </p>
-        {% if user.is_authenticated %}
-        <p>You're already logged in! <a href="{% url 'posts_create' %}">Click Here</a> to create a new Post or <a href="{% url 'posts_index' %}">Click Here</a> to see your Posts</p>
-        {% else %}
-        <p>You're not logged in yet! <a href="{% url 'login' %}">Click Here</a> to Login or <a href="{% url 'signup' %}">Click Here</a> if you haven't created an account yet!</p>
-        {% endif %}
-    </div> {% endcomment %}
 {% endblock %}

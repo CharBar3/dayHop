@@ -15,7 +15,11 @@ def home(request):
 @login_required
 def post_index(request):
     posts = Post.objects.filter(user=request.user)
-    return render(request, 'post/index.html', {'posts': posts})
+    if len(posts) == 0:
+        no_posts = True
+    else: 
+        no_posts = False
+    return render(request, 'post/index.html', {'posts': posts, 'no_posts': no_posts})
 
 @login_required
 def post_detail(request, post_id):
