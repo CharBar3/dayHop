@@ -9,12 +9,18 @@ from datetime import datetime
 
 # Create your views here.
 
+# Sort function for propper ordering from the database
+def Sort(list):
+        return sorted(list, key = lambda x: x.date, reverse=True)
+
 def home(request):
     return render(request, 'home.html')
 
 @login_required
 def post_index(request):
+
     posts = Post.objects.filter(user=request.user)
+    posts = Sort(posts)
     if len(posts) == 0:
         no_posts = True
     else: 
@@ -33,6 +39,7 @@ def date(request, post_id):
         user=request.user,
         date__month=post.date.month, 
         date__day=post.date.day)
+    posts = Sort(posts)
     day = (f'{posts[0].date.strftime("%B")} {posts[0].date.day}')
     return render(request, 'post/date.html', {'posts': posts, 'day': day})
 
