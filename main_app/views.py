@@ -29,7 +29,8 @@ def date(request, post_id):
         user=request.user,
         date__month=post.date.month, 
         date__day=post.date.day)
-    return render(request, 'post/date.html', {'posts': posts})
+    day = (f'{posts[0].date.strftime("%B")} {posts[0].date.day}')
+    return render(request, 'post/date.html', {'posts': posts, 'day': day})
 
 def signup(request):
     error_messages = ''
