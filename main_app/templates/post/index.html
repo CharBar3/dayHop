@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Post Index</h1>
+
+{% for post in posts %}
+<div class="card">
+    <div class="card-content">
+        <p>{{ post.date }}</p>
+        <span class="card-title">{{ post.title }}</span>
+        <p>{{ post.body }}</p>
+        <div class="card-action">
+            <a href="{% url 'date' post.id %}">View previous posts on this day!</a>
+            {% comment %} <a href="{% url 'posts_update' post.id %}">Edit</a>
+            <a href="{% url 'posts_delete' post.id %}">Delete</a> {% endcomment %}
+            <a href="{% url 'posts_detail' post.id %}">View/Update</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
