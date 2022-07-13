@@ -27,6 +27,7 @@ def post_detail(request, post_id):
 def date(request, post_id):
     post = Post.objects.get(id=post_id)
     posts = Post.objects.filter(
+        user=request.user,
         date__month=post.date.month, 
         date__day=post.date.day)
     return render(request, 'post/date.html', {'posts': posts})
