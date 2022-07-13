@@ -1,5 +1,54 @@
 {% extends 'base.html' %} {% block content %}
 <h1>Home</h1>
 
+<div class="row">
+    <div class="col s12 m12">
+      <div class="card blue-grey darken-3">
+        <div class="card-content white-text">
+          <span class="card-title">About Day Hop</span>
+          <p>Can you remember your life? I can't... 
+            that's why I made Day Hop! An app that lets you write a tweet sized post about what you did on a particular day. 
+            Give it a title, give it a body, (change the date if you forgot to post yesterday..) and you're all set.
+            BUT WAIT! THERE IS MORE! You can also see what post you made on any day a year ago... and the year before that... and the year before that.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="row">
+    <div class="col s12 m12">
+      <div class="card blue-grey darken-3">
+        <div class="card-content white-text">
+          <span class="card-title">Your Next Steps...</span>
+        {% if user.is_authenticated %}
+          <p>You're ready to make a post! Create a Post or View your previous Posts</p>
+        </div>
+        <div class="card-action">
+            <a href="{% url 'posts_index' %}">View Posts</a>
+            <a href="{% url 'posts_create' %}">Create Post</a>
+        </div>
+        {% else %}
+        <p>Looks like you're not logged in! Make sure to do that or create an account if you haven't already.</p>
+        <div class="card-action">
+          <a href="{% url 'login' %}">Login</a>
+          <a href="{% url 'signup' %}">Create Account</a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+    {% comment %} <div class="card-panel">
+        <h2 class="card-title">About Day Hop</h2>
+        <p>Can you remember your life? I can't... 
+        that's why I made Day Hop! An app that lets you write a tweet sized post about what you did on a particular day. 
+        Give it a title, give it a body, (change the date if you forgot to post yesterday..) and you're all set.
+        BUT WAIT! THERE IS MORE! You can also see what post you made on any day a year ago... and the year before that... and the year before that.
+        </p>
+        {% if user.is_authenticated %}
+        <p>You're already logged in! <a href="{% url 'posts_create' %}">Click Here</a> to create a new Post or <a href="{% url 'posts_index' %}">Click Here</a> to see your Posts</p>
+        {% else %}
+        <p>You're not logged in yet! <a href="{% url 'login' %}">Click Here</a> to Login or <a href="{% url 'signup' %}">Click Here</a> if you haven't created an account yet!</p>
+        {% endif %}
+    </div> {% endcomment %}
 {% endblock %}
