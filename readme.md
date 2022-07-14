@@ -6,8 +6,10 @@ Can you remember your life? I can't, that's why I made Day Hop! An app that lets
 
 1. Django
 2. Python
-3. HTML
-4. PostgreSQL
+3. PostgreSQL
+4. HTML
+5. Materialize CSS
+6. Heroku
 
 ## Screenshots
 
@@ -26,5 +28,5 @@ Can you remember your life? I can't, that's why I made Day Hop! An app that lets
 ## Features I'd like to ADD!
 
 1. Calendar View that for posts
-2. A notification to remind you to post/lets you know when you havne't posted that day upon login. 
+2. A notification to remind you to post/lets you know when you haven't posted that day upon login. 
 3. Adding a picture to posts
