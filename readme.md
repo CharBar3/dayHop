@@ -2,6 +2,8 @@
 
 Can you remember your life? I can't, that's why I made Day Hop! An app that lets you write a tweet-sized post about what you did on a particular day.
 
+BUT WAIT! THERE IS MORE! You can also see what post you made on any day a year ago... and the year before that... and the year before that... etc.
+
 ## Technologies Used
 
 1. Django
