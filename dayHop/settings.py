@@ -10,11 +10,20 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import django_heroku
 from pathlib import Path
 from decouple import config
 
+# imported OS for vercel
+import os
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# added for vercel
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
 
 
 # Quick-start development settings - unsuitable for production
@@ -26,7 +35,7 @@ SECRET_KEY = '(^1r-o)va6d!u#x0b**78x9pn4^3dt8$r4c8d5=qc$^ck07046'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -126,5 +135,5 @@ LOGOUT_REDIRECT_URL = '/post/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import django_heroku
+
 django_heroku.settings(locals())
