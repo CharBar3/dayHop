@@ -15,15 +15,15 @@ from pathlib import Path
 from decouple import config
 
 # imported OS for vercel
-import os
+# import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # added for vercel
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
+# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build')
 
 
 # Quick-start development settings - unsuitable for production
